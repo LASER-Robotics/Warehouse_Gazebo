@@ -3,6 +3,7 @@
 
   <xacro:include filename="$(find robot_description)/urdf/robot.gazebo.xacro" />
 
+
   <joint name="joint_camera_1" type="fixed">
     <parent link="carcaca"/>
     <child link="camera_1"/>
@@ -15,12 +16,19 @@
     <origin rpy="0 0 -1.57" xyz="-0.0005 -0.23 0.109"/>
   </joint>
 
-  <joint name="joint_lifting_tray" type="prismatic">
+  <joint name="joint_piston" type="prismatic">
     <parent link="carcaca"/>
-    <child link="lifting_tray"/>
+    <child link="piston"/>  
     <origin rpy="0 0 0" xyz="0 0 0.1318"/>
     <axis xyz="0 0 1"/>
-    <limit effort="100" lower="0" upper="0.04" velocity="1"/>
+    <limit effort="10" lower="0" upper="0.04" velocity="0.1"/>
+  </joint>
+
+  <joint name="joint_tray" type="continuous">
+    <parent link="piston"/>
+    <child link="tray"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="joint_wheel_front_right" type="fixed">
@@ -62,6 +70,7 @@
     <axis xyz="0 0 1"/>
     <limit effort="-1.0" lower="-1e+16" upper="1e+16" velocity="-1.0"/>
   </joint>
+
 
   <gazebo reference="carcaca">
     <selfCollide>true</selfCollide>
@@ -209,7 +218,7 @@
   </link>
 
 
-  <gazebo reference="lifting_tray">
+  <gazebo reference="piston">
     <selfCollide>true</selfCollide>
     <mu1 value="0.1"/>
     <mu2 value="0.1"/>
@@ -218,22 +227,51 @@
     <fdir1 value="0 0 0"/>
   </gazebo>
 
-  <link name="lifting_tray">
+  <link name="piston">
     <inertial>
-      <mass value="0.5"/>
+      <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
     </inertial>
-    <collision name="lifting_tray_collision">
+    <collision name="piston_collision">
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_description/models/laser_robot/meshes/lifting.dae" scale="1 1 1"/>
+        <mesh filename="package://robot_description/models/laser_robot/meshes/piston.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <visual name="lifting_tray_visual">
+    <visual name="piston_visual">
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_description/models/laser_robot/meshes/lifting.dae" scale="1 1 1"/>
+        <mesh filename="package://robot_description/models/laser_robot/meshes/piston.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <gazebo reference="tray">
+    <selfCollide>true</selfCollide>
+    <mu1 value="0.09"/>
+    <mu2 value="0.09"/>
+    <kp value="10000000.0" />
+    <kd value="10000" />
+    <fdir1 value="0 0 0"/>
+  </gazebo>
+
+  <link name="tray">
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+    <collision name="tray_collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_description/models/laser_robot/meshes/tray.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="tray_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_description/models/laser_robot/meshes/tray.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>

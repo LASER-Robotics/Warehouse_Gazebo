@@ -4,7 +4,7 @@ joint_state_controller:
 
 diff_drive_controller:
   type        : "diff_drive_controller/DiffDriveController"
-  left_wheel  : 'joint_left_wheel'
+  left_wheel  : 'joint_left_wheel, joint_tray'
   right_wheel : 'joint_right_wheel'
   publish_rate: 50.0               # default: 50
   pose_covariance_diagonal : [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]

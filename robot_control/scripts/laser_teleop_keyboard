@@ -69,11 +69,6 @@ speedBindings={
         'e':(1,1.1),
         'c':(1,.9),
             }
-          
-liftingTray={
-        'r':(1),
-        'v':(0),
-            }
 
 def getKey():
     tty.setraw(sys.stdin.fileno())

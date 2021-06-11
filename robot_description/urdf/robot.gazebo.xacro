@@ -17,7 +17,7 @@
 
     <transmission name="tran1">
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name="joint_lifting_tray">
+        <joint name="joint_piston">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
         <actuator name="motor1">
@@ -25,6 +25,23 @@
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
+
+    <!-- <transmission name="tran2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_tray">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission> -->
+
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <jointName>joint_piston, joint_tray</jointName>
+        </plugin>
+    </gazebo>
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
