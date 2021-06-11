@@ -47,6 +47,7 @@ Contents
 * <a href="http://wiki.ros.org/rviz/UserGuide"> Rviz</a>
 * <a href="https://docs.python-guide.org/starting/install3/linux/"> Python 3.8</a>
 * <a href="http://wiki.ros.org/ros_control"> ROS Control</a>
+* <a href="https://zoomadmin.com/HowToInstall/UbuntuPackage/joint-state-publisher"> Joint State Publisher</a>
 
 ## Installation
 In your workspace inside the <code>src</code> folder, place the <code>robot_description</code> and <code>robot_control</code> packages
