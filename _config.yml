@@ -1,0 +1,20 @@
+  
+remote_theme: pmarsceill/just-the-docs
+# remote_theme: carlosperate/jekyll-theme-rtd
+
+logo: "fig/mrs_logo.png"
+
+title: "Multi-robot Systems Group UAV System"
+
+url: "https://laser-robotics.github.io/Warehouse_Gazebo"
+
+aux_links:
+  "MRS website":
+    - "//mrs.felk.cvut.cz"
+  "MRS Github":
+    - "//github.com/ctu-mrs"
+  "MRS internal Gitlab":
+    - "//mrs.felk.cvut.cz/gitlab"
+
+plugins:
+  - jemoji
