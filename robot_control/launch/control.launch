@@ -1,0 +1,31 @@
+<launch>  
+<!--Lifting tray controller-->
+  <rosparam file="$(find robot_control)/config/config.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/my_robot" args="joint_state_controller 
+                                         joint1_position_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/my_robot/joint_states" />
+  </node>
+  <!--End lifting tray controller-->
+
+
+  <!--Teleop control-->
+  <rosparam command="load" file="$(find robot_control)/config/diff_drive.yaml"/>
+
+  <node pkg="robot_control" type="laser_teleop_keyboard" name="teleop_keyboard" output="screen">
+    <param name="scale_linear" value="0.5" type="double"/>
+    <param name="scale_angular" value="1.5" type="double"/>
+    <remap from="teleop_keyboard/cmd_vel" to="/cmd_vel"/>
+  </node>
+
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+
+  
+</launch>
