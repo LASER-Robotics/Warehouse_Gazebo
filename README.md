@@ -85,7 +85,7 @@ rostopic pub -1 /my_robot/joint1_position_controller/command std_msgs/Float64 "d
 </pre>
 
 ### How to run the Rviz
-To use sensors like <code>camera</code> and <code>laser</code> we created a shortcut through Rviz:
+To use sensors like <code>camera</code> and <code>optical sensor</code> we created a shortcut through Rviz:
 
 <pre>
 source ./devel/setup.bash <br />
