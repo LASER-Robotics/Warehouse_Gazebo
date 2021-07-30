@@ -17,3 +17,5 @@ git clone https://github.com/LASER-Robotics/Warehouse_Gazebo.git
 
 cd src/robot_control/scripts/
 chmod +x laser_teleop_keyboard
+
+echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
