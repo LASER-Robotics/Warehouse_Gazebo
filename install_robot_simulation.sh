@@ -14,3 +14,6 @@ sudo apt-get install ros-fuerte-visualization
 sudo apt-get install -y joint-state-publisher
 
 git clone https://github.com/LASER-Robotics/Warehouse_Gazebo.git
+
+cd src/robot_control/scripts/
+chmod +x laser_teleop_keyboard
