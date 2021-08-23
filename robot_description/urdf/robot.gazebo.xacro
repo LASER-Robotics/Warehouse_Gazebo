@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:arg name="camera_1_visual" default="false"/>
+  
 
     <xacro:macro name="omni_steering" params="">
         <gazebo>
@@ -113,7 +113,8 @@
         </plugin>
     </gazebo>
 
-        
+
+    <xacro:arg name="camera_1_visual" default="false"/>  
     <gazebo reference="camera_1">
         <sensor type="camera" name="camera1">
             <update_rate>30.0</update_rate>
@@ -153,23 +154,23 @@
         </sensor>
     </gazebo>
 
-  <gazebo reference="lidar">
+  <gazebo reference="rplidar">
     <sensor type="ray" name="laser_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>40</update_rate>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
       <ray>
         <scan>
           <horizontal>
-            <samples>720</samples>
+            <samples>${14400/20}</samples>
             <resolution>1</resolution>
-            <min_angle>-1.1775</min_angle>
-            <max_angle>1.1775</max_angle>
+            <min_angle>-3.14159265359</min_angle>
+            <max_angle>3.14159265359</max_angle>
           </horizontal>
         </scan>
         <range>
-          <min>0.10</min>
-          <max>10.0</max>
+          <min>0.15</min>
+          <max>14.0</max>
           <resolution>0.01</resolution>
         </range>
         <noise>
@@ -184,7 +185,7 @@
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
         <topicName>/my_robot/laser/scan</topicName>
-        <frameName>lidar</frameName>
+        <frameName>rplidar</frameName>
       </plugin>
     </sensor>
   </gazebo>

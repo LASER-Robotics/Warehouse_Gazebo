@@ -16,12 +16,18 @@
     <origin rpy="0 0 -1.57" xyz="-0.0005 -0.23 0.109"/>
   </joint>
 
+  <joint name="joint_rplidar" type="fixed">
+    <parent link="carcaca"/>
+    <child link="rplidar"/>
+    <origin rpy="0 0 0" xyz="0.14 -0.17 0.27"/>
+  </joint>
+
   <joint name="joint_piston" type="prismatic">
     <parent link="carcaca"/>
     <child link="piston"/>  
     <origin rpy="0 0 0" xyz="0 0 0.1318"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" lower="0" upper="0.04" velocity="0.1"/>
+    <limit effort="0" lower="0" upper="0.04" velocity="0"/>
   </joint>
 
   <joint name="joint_tray" type="continuous">
@@ -219,7 +225,7 @@
 
 
   <gazebo reference="piston">
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <mu1 value="0.1"/>
     <mu2 value="0.1"/>
     <kp value="10000000.0" />
@@ -229,9 +235,9 @@
 
   <link name="piston">
     <inertial>
-      <mass value="0.1"/>
+      <mass value="0.3"/>
       <origin rpy="0  0  0" xyz="0 0 0"/>
-      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
     </inertial>
     <collision name="piston_collision">
       <origin rpy="0  0  0" xyz="0 0 0"/>
@@ -248,9 +254,9 @@
   </link>
 
   <gazebo reference="tray">
-    <selfCollide>true</selfCollide>
-    <mu1 value="0.09"/>
-    <mu2 value="0.09"/>
+    <selfCollide>false</selfCollide>
+    <mu1 value="0.1"/>
+    <mu2 value="0.1"/>
     <kp value="10000000.0" />
     <kd value="10000" />
     <fdir1 value="0 0 0"/>
@@ -258,9 +264,9 @@
 
   <link name="tray">
     <inertial>
-      <mass value="0.01"/>
+      <mass value="0.5"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+      <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0"/>
     </inertial>
     <collision name="tray_collision">
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -374,4 +380,26 @@
       </geometry>
     </visual>
   </link>
+
+  <link name="rplidar">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <collision name="rplidar_collision">
+      <origin rpy="0 0 1.20" xyz="-0.03 0.02 -0.02"/>
+      <geometry>
+        <mesh filename="package://robot_description/models/laser_robot/meshes/rplidar.dae" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+    <visual name="rplidar_visual">
+      <origin rpy="0 0 1.20" xyz="-0.03 0.02 -0.02"/>
+      <geometry>
+        <mesh filename="package://robot_description/models/laser_robot/meshes/rplidar.dae" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </visual>
+  </link>
+
+
 </robot>

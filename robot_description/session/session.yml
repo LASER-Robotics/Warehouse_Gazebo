@@ -1,0 +1,22 @@
+name: simulation
+root: ./
+startup_window: status
+pre_window:
+windows:
+  - gazebo:
+      layout: tiled
+      panes:
+        - roslaunch robot_description spawn.launch
+  - control:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch robot_control control.launch
+  - ros_qt:
+      layout: tiled
+      panes:
+        - waitForRos; rosrun rqt_reconfigure rqt_reconfigure
+        - waitForRos; rosrun rqt_image_view rqt_image_view
+  - layout:
+      layout: tiled
+      panes:
+        - waitForRos; sleep 1; ~/.i3/layout_manager.sh ./layout.json
