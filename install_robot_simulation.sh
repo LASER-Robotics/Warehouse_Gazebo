@@ -19,3 +19,5 @@ cd src/robot_control/scripts/
 chmod +x laser_teleop_keyboard
 
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
+
+echo 'source ~/catkin_ws/src/shell_additions.sh' >> ~/.bashrc

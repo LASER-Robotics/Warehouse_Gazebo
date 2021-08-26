@@ -1,0 +1,17 @@
+name: simulation
+root: ./
+startup_window: status
+pre_window: source ~/catkin_ws/devel/setup.bash
+windows:
+  - gazebo:
+      layout: tiled
+      panes: 
+        - roslaunch robot_description spawn.launch
+  - control:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch robot_control control.launch
+  - rviz:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch robot_description rviz.launch
