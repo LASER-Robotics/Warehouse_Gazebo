@@ -20,4 +20,4 @@ chmod +x laser_teleop_keyboard
 
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
 
-echo 'source ~/catkin_ws/src/shell_additions.sh' >> ~/.bashrc
+echo 'source ~/catkin_ws/src/robot_description/session/shell_additions.sh' >> ~/.bashrc
