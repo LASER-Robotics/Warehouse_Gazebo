@@ -1,194 +1,82 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  
 
-    <xacro:macro name="omni_steering" params="">
-        <gazebo>
-            <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-            <commandTopic>cmd_vel</commandTopic>
-            <odometryTopic>odom</odometryTopic> 
-            <odometryFrame>odom</odometryFrame>
-            <odometryRate>50.0</odometryRate>
-            <robotBaseFrame>carcaca</robotBaseFrame>
-            </plugin>
-        </gazebo>
-    </xacro:macro>
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_piston">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
-    <transmission name="tran1">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="joint_piston">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="motor1">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
-
-    <!-- <transmission name="tran2">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="joint_tray">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="motor2">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission> -->
-
-    <gazebo>
-        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
-            <jointName>joint_piston, joint_tray</jointName>
-        </plugin>
-    </gazebo>
-
-    <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-        <robotNamespace>/my_robot</robotNamespace>
-        </plugin>
-    </gazebo>
-    
-    <gazebo>
-        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-
-        <!-- Plugin update rate in Hz -->
-        <updateRate>50</updateRate>
-
-        <!-- Name of left joint, defaults to `left_joint` -->
-        <leftJoint>joint_left_wheel</leftJoint>
-
-        <!-- Name of right joint, defaults to `right_joint` -->
-        <rightJoint>joint_right_wheel</rightJoint>
-
-        <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
-        <wheelSeparation>0.407</wheelSeparation>
-
-        <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
-        <wheelDiameter>0.1016</wheelDiameter>
-
-        <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
-        <wheelAcceleration>0</wheelAcceleration>
-
-        <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
-        <wheelTorque>3</wheelTorque>
-
-        <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
-        <commandTopic>cmd_vel</commandTopic>
-
-        <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
-        <odometryTopic>odom</odometryTopic>
-
-        <!-- Odometry frame, defaults to `odom` -->
-        <odometryFrame>odom</odometryFrame>
-
-        <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
-        <robotBaseFrame>carcaca</robotBaseFrame>
-
-        <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
-        <odometrySource>1</odometrySource>
-
-        <!-- Set to true to publish transforms for the wheel links, defaults to false -->
-        <publishWheelTF>false</publishWheelTF>
-
-        <!-- Set to true to publish transforms for the odometry, defaults to true -->
-        <publishOdom>true</publishOdom>
-
-        <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
-        <publishWheelJointState>true</publishWheelJointState>
-
-        <!-- Set to true to swap right and left wheels, defaults to true -->
-        <legacyMode>true</legacyMode>
-        </plugin>
-    </gazebo>
-  
-    <gazebo>
-        <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
-        <alwaysOn>true</alwaysOn>
-        <bodyName>carcaca</bodyName>
-        <topicName>imu</topicName>
-        <serviceName>imu_service</serviceName>
-        <gaussianNoise>0.0</gaussianNoise>
-        <updateRate>20.0</updateRate>
-        </plugin>
-    </gazebo>
-
-
-    <xacro:arg name="camera_1_visual" default="false"/>  
-    <gazebo reference="camera_1">
-        <sensor type="camera" name="camera1">
-            <update_rate>30.0</update_rate>
-            <visualize>$(arg camera_1_visual)</visualize>
-            <camera name="head">
-                <horizontal_fov>1.3962634</horizontal_fov>
-                <image>
-                <width>800</width>
-                <height>800</height>
-                <format>R8G8B8</format>
-                </image>
-                <clip>
-                <near>0.02</near>
-                <far>300</far>
-                </clip>
-                <noise>
-                <type>gaussian</type>
-
-                <mean>0.0</mean>
-                <stddev>0.007</stddev>
-                </noise>
-            </camera>
-            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-                <alwaysOn>true</alwaysOn>
-                <updateRate>0.0</updateRate>
-                <cameraName>my_robot/camera1</cameraName>
-                <imageTopicName>image_raw</imageTopicName>
-                <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-                <frameName>camera_1</frameName>
-                <hackBaseline>0.07</hackBaseline>
-                <distortionK1>0.0</distortionK1>
-                <distortionK2>0.0</distortionK2>
-                <distortionK3>0.0</distortionK3>
-                <distortionT1>0.0</distortionT1>
-                <distortionT2>0.0</distortionT2>
-            </plugin>
-        </sensor>
-    </gazebo>
-
-  <gazebo reference="rplidar">
-    <sensor type="ray" name="laser_sensor">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
-      <update_rate>20</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>${14400/20}</samples>
-            <resolution>1</resolution>
-            <min_angle>-3.14159265359</min_angle>
-            <max_angle>3.14159265359</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.15</min>
-          <max>14.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <!-- Noise parameters based on published spec for Hokuyo laser
-               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-               reading. -->
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/my_robot/laser/scan</topicName>
-        <frameName>rplidar</frameName>
-      </plugin>
-    </sensor>
+  <gazebo>
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <jointName>joint_piston, joint_tray</jointName>
+    </plugin>
   </gazebo>
-         
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/my_robot</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+      <!-- Plugin update rate in Hz -->
+      <updateRate>50</updateRate>
+
+      <!-- Name of left joint, defaults to `left_joint` -->
+      <leftJoint>joint_left_wheel</leftJoint>
+
+      <!-- Name of right joint, defaults to `right_joint` -->
+      <rightJoint>joint_right_wheel</rightJoint>
+
+      <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+      <wheelSeparation>0.407</wheelSeparation>
+
+      <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+      <wheelDiameter>0.1016</wheelDiameter>
+
+      <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+      <wheelAcceleration>0</wheelAcceleration>
+
+      <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+      <wheelTorque>3</wheelTorque>
+
+      <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+      <commandTopic>cmd_vel</commandTopic>
+
+      <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+      <odometryTopic>odom</odometryTopic>
+
+      <!-- Odometry frame, defaults to `odom` -->
+      <odometryFrame>odom</odometryFrame>
+
+      <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+      <robotBaseFrame>carcaca</robotBaseFrame>
+
+      <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+      <odometrySource>1</odometrySource>
+
+      <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+      <publishWheelTF>false</publishWheelTF>
+
+      <!-- Set to true to publish transforms for the odometry, defaults to true -->
+      <publishOdom>true</publishOdom>
+
+      <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+      <publishWheelJointState>true</publishWheelJointState>
+
+      <!-- Set to true to swap right and left wheels, defaults to true -->
+      <legacyMode>true</legacyMode>
+    </plugin>
+  </gazebo>
+
 
 </robot>

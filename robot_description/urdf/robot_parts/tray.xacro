@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <joint name="joint_tray" type="continuous">
+        <parent link="piston" />
+        <child link="tray" />
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <gazebo reference="tray">
+        <selfCollide>false</selfCollide>
+        <mu1 value="0.1" />
+        <mu2 value="0.1" />
+        <kp value="10000000.0" />
+        <kd value="10000" />
+        <fdir1 value="0 0 0" />
+    </gazebo>
+
+    <link name="tray">
+        <inertial>
+            <mass value="0.5" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0" />
+        </inertial>
+        <collision name="tray_collision">
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot_description/models/laser_robot/meshes/tray.dae" scale="1 1 1" />
+            </geometry>
+        </collision>
+        <visual name="tray_visual">
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot_description/models/laser_robot/meshes/tray.dae" scale="1 1 1" />
+            </geometry>
+        </visual>
+    </link>
+</robot>

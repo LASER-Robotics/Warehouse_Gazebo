@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo reference="lidar">
+        <sensor type="ray" name="laser_sensor">
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>false</visualize>
+          <update_rate>20</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>${14400/20}</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.1781</min_angle>
+                <max_angle>1.1781</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.15</min>
+              <max>14.0</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <!-- Noise parameters based on published spec for Hokuyo laser
+                   achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+                   stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+                   reading. -->
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+            <topicName>/my_robot/laser/scan</topicName>
+            <frameName>lidar</frameName>
+          </plugin>
+        </sensor>
+      </gazebo>
+
+      <joint name="joint_lidar" type="fixed">
+        <parent link="carcaca" />
+        <child link="lidar" />
+        <origin rpy="0 0 -1.57" xyz="-0.0005 -0.23 0.109" />
+      </joint>
+
+      <link name="lidar">
+        <inertial>
+          <mass value="0.1" />
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+        </inertial>
+        <collision name="lidar_collision">
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <geometry>
+            <mesh filename="package://robot_description/models/laser_robot/lidar/meshes/lidar.obj" scale="0.5 0.5 0.5" />
+          </geometry>
+        </collision>
+        <visual name="lidar_visual">
+          <origin rpy="0 1.57 1.57" xyz="0 0 0" />
+          <geometry>
+            <mesh filename="package://robot_description/models/laser_robot/lidar/meshes/lidar.obj" scale="0.5 0.5 0.5" />
+          </geometry>
+        </visual>
+      </link>
+</robot>

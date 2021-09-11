@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <joint name="joint_right_wheel" type="revolute">
+        <parent link="carcaca" />
+        <child link="right_wheel" />
+        <origin rpy="0 1.57 0" xyz="0.193 0 0.0507" />
+        <axis xyz="0 0 1" />
+        <limit effort="-1.0" lower="-1e+16" upper="1e+16" velocity="-1.0" />
+    </joint>
+
+    <gazebo reference="right_wheel">
+        <selfCollide>false</selfCollide>
+        <mu1 value="100" />
+        <mu2 value="50" />
+        <kp value="10000000.0" />
+        <kd value="1000" />
+        <fdir1 value="0 0 0" />
+    </gazebo>
+
+    <link name="right_wheel">
+        <inertial>
+            <mass value="1" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+        </inertial>
+        <collision name="right_wheel_collision">
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot_description/models/laser_robot/wheel/meshes/roda.obj" scale="1 1 1" />
+            </geometry>
+        </collision>
+        <visual name="right_wheel_visual">
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot_description/models/laser_robot/wheel/meshes/roda.obj" scale="1 1 1" />
+            </geometry>
+        </visual>
+    </link>
+
+</robot>
