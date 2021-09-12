@@ -9,22 +9,13 @@
 
   <xacro:include filename="$(find robot_description)/urdf/robot_parts/carcaca.xacro" />
 
-  <xacro:include filename="$(find robot_description)/urdf/robot_parts/right_wheel.xacro" />
-
-  <xacro:include filename="$(find robot_description)/urdf/robot_parts/left_wheel.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/robot_parts/traction_wheel.xacro" />
 
   <xacro:include filename="$(find robot_description)/urdf/robot_parts/tray.xacro" />
 
   <xacro:include filename="$(find robot_description)/urdf/robot_parts/piston.xacro" />
 
-  <xacro:include filename="$(find robot_description)/urdf/robot_parts/left_rear_wheel.xacro" />
-
-  <xacro:include filename="$(find robot_description)/urdf/robot_parts/right_rear_wheel.xacro" />
-
-  <xacro:include filename="$(find robot_description)/urdf/robot_parts/left_front_wheel.xacro" />
-
-  <xacro:include filename="$(find robot_description)/urdf/robot_parts/right_front_wheel.xacro" />
-
+  <xacro:include filename="$(find robot_description)/urdf/robot_parts/omni_wheel.xacro" />
 
   <!--=========================== SENSORS ===========================-->
 
@@ -51,6 +42,5 @@
   <xacro:if value="$(arg sensor_camera)">
     <xacro:include filename="$(find robot_description)/urdf/sensors/camera.xacro" />
   </xacro:if>
-
 
 </robot>

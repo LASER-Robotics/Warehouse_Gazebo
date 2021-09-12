@@ -1,33 +1,38 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <gazebo reference="carcaca">
-        <selfCollide>true</selfCollide>
-        <mu1 value="0.3" />
-        <mu2 value="0.3" />
-        <kp value="10000000.0" />
-        <kd value="1000" />
-        <fdir1 value="0 0 0" />
-    </gazebo>
 
-    <link name="carcaca">
-        <inertial>
-            <mass value="15" />
-            <origin rpy="0  0  3.14" xyz="0  0  0.0118" />
-            <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
-        </inertial>
-        <collision name="carcaca_collision">
-            <origin rpy="0  0  3.14" xyz="0  0  0.0118" />
-            <geometry>
-                <mesh filename="package://robot_description/models/laser_robot/meshes/carcaca.dae" scale="1 1 1" />
-            </geometry>
-        </collision>
-        <visual name="carcaca_visual">
-            <origin rpy="0  0  3.14" xyz="0  0  0.0118" />
-            <geometry>
-                <mesh filename="package://robot_description/models/laser_robot/meshes/carcaca.dae" scale="1 1 1" />
-            </geometry>
-        </visual>
-    </link>
+    <xacro:macro name="base" params="base_link">
+        <gazebo reference="${base_link}">
+            <selfCollide>true</selfCollide>
+            <mu1 value="0.3" />
+            <mu2 value="0.3" />
+            <kp value="10000000.0" />
+            <kd value="1000" />
+            <fdir1 value="0 0 0" />
+        </gazebo>
+
+        <link name="${base_link}">
+            <inertial>
+                <mass value="15" />
+                <origin rpy="0  0  3.14" xyz="0  0  0.0118" />
+                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+            </inertial>
+            <collision name="${base_link}_collision">
+                <origin rpy="0  0  3.14" xyz="0  0  0.0118" />
+                <geometry>
+                    <mesh filename="package://robot_description/models/laser_robot/meshes/carcaca.dae" scale="1 1 1" />
+                </geometry>
+            </collision>
+            <visual name="${base_link}_visual">
+                <origin rpy="0  0  3.14" xyz="0  0  0.0118" />
+                <geometry>
+                    <mesh filename="package://robot_description/models/laser_robot/meshes/carcaca.dae" scale="1 1 1" />
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+
+    <xacro:base base_link="carcaca" />
 
 </robot>

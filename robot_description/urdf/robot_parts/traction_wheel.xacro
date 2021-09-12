@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+    <xacro:macro name="traction_wheel" params="prefix pos_X pos_Y pos_Z pos_r pos_p pos_y">
+        <joint name="joint_${prefix}" type="revolute">
+            <parent link="carcaca" />
+            <child link="${prefix}" />
+            <origin rpy="${pos_r} ${pos_p} ${pos_y}" xyz="${pos_X} ${pos_Y} ${pos_Z}" />
+            <axis xyz="0 0 1" />
+            <limit effort="-1.0" lower="-1e+16" upper="1e+16" velocity="-1.0" />
+        </joint>
+
+        <gazebo reference="${prefix}">
+            <selfCollide>false</selfCollide>
+            <mu1 value="100" />
+            <mu2 value="50" />
+            <kp value="10000000.0" />
+            <kd value="1000" />
+            <fdir1 value="0 0 0" />
+        </gazebo>
+
+        <link name="${prefix}">
+            <inertial>
+                <mass value="1" />
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+            </inertial>
+            <collision name="${prefix}_collision">
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <geometry>
+                    <mesh filename="package://robot_description/models/laser_robot/wheel/meshes/roda.obj" scale="1 1 1" />
+                </geometry>
+            </collision>
+            <visual name="${prefix}_visual">
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <geometry>
+                    <mesh filename="package://robot_description/models/laser_robot/wheel/meshes/roda.obj" scale="1 1 1" />
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+
+    <xacro:traction_wheel prefix="left_wheel" pos_X="-0.214" pos_Y="0" pos_Z="0.0507" pos_r="0" pos_p="1.57" pos_y="0" />
+    <xacro:traction_wheel prefix="right_wheel" pos_X="0.193" pos_Y="0" pos_Z="0.0507" pos_r="0" pos_p="1.57" pos_y="0" />
+</robot>
