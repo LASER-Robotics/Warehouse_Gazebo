@@ -63,13 +63,8 @@
 
 
                 <include>
-                        <uri> model://qrcode</uri>
+                        <uri> model://tag</uri>
                         <pose> 0 -0.127 0.011 0 0 0 </pose>
-                </include>
-
-                <include>
-                        <uri> model://qrcode</uri>
-                        <pose> 0 -1.127 0.011 0 0 0 </pose>
                 </include>
 
                 <include>

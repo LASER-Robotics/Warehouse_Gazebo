@@ -5,13 +5,14 @@
         <joint name="joint_${prefix}" type="prismatic">
             <parent link="carcaca" />
             <child link="${prefix}" />
+            <!-- <dynamics friction="5.0" /> -->
             <origin rpy="0 0 0" xyz="0 0 0.1318" />
             <axis xyz="0 0 1" />
             <limit effort="0" lower="0" upper="0.04" velocity="0" />
         </joint>
 
         <gazebo reference="${prefix}">
-            <selfCollide>false</selfCollide>
+            <selfCollide>true</selfCollide>
             <mu1 value="0.1" />
             <mu2 value="0.1" />
             <kp value="10000000.0" />

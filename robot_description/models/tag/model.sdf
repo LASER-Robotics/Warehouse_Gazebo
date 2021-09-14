@@ -1,28 +1,22 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <sdf version="1.5">
-  <model name="qrcode">
+  <model name="tag">
     <static>true</static>
 
     <link name="link">
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://qrcode/meshes/qrcode.dae</uri>
+            <uri>model://tag/meshes/tag1.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://qrcode/meshes/qrcode.dae</uri>
+            <uri>model://tag/meshes/tag1.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Green</name>
-          </script>
-        </material>
       </visual>
     </link>
   </model>

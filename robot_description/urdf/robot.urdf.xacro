@@ -19,13 +19,13 @@
 
   <!--=========================== SENSORS ===========================-->
 
-  <xacro:arg name="sensor_imu" default="false" />
+  <xacro:arg name="sensor_imu" default="true" />
 
-  <xacro:arg name="sensor_lidar" default="false" />
+  <xacro:arg name="sensor_lidar" default="true" />
 
-  <xacro:arg name="sensor_rplidar" default="false" />
+  <xacro:arg name="sensor_rplidar" default="true" />
 
-  <xacro:arg name="sensor_camera" default="false" />
+  <xacro:arg name="sensor_camera" default="true" />
 
   <xacro:if value="$(arg sensor_imu)">
     <xacro:include filename="$(find robot_description)/urdf/sensors/imu.xacro" />

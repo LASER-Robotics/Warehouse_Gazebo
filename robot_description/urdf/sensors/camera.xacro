@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+
     <xacro:arg name="camera_1_visual" default="false" />
     <gazebo reference="camera_1">
         <sensor type="camera" name="camera1">
@@ -66,4 +67,5 @@
             </geometry>
         </visual>
     </link>
+
 </robot>
