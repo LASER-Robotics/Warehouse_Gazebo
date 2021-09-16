@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <sdf version="1.5">
   <model name="warehouse">
     <static>true</static>
@@ -7,20 +7,19 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://warehouse/meshes/arena_warehouse.obj</uri>
-            <scale>0.5 0.5 0.5</scale>
+            <uri>model://warehouse/meshes/warehouse.dae</uri>
+            <scale>1 1 1</scale>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://warehouse/meshes/arena_warehouse.obj</uri>
-            <scale>0.5 0.5 0.5</scale>
+            <uri>model://warehouse/meshes/warehouse.dae</uri>
+            <scale>1 1 1</scale>
           </mesh>
         </geometry>
       </visual>
     </link>
   </model>
 </sdf>
-

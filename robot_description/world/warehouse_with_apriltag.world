@@ -1,0 +1,2261 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+    <world name="default">
+        <!-- physics engine {-->
+        <physics name="default_physics" default="0" type="ode">
+            <gravity>0 0 -9.8066</gravity>
+            <ode>
+                <solver>
+                    <type>quick</type>
+                    <iters>10</iters>
+                    <sor>1.3</sor>
+                    <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+                </solver>
+                <constraints>
+                    <cfm>0</cfm>
+                    <erp>0.2</erp>
+                    <contact_max_correcting_vel>1000</contact_max_correcting_vel>
+                    <contact_surface_layer>0.001</contact_surface_layer>
+                </constraints>
+            </ode>
+            <max_step_size>0.004</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <real_time_update_rate>250</real_time_update_rate>
+            <magnetic_field>6.0e-06 2.3e-05 -4.2e-05</magnetic_field>
+        </physics>
+        <!--}-->
+
+        <!-- setup shadows {-->
+        <scene>
+            <shadows>false</shadows>
+            <sky>
+                <clouds />
+            </sky>
+        </scene>
+        <!--}-->
+
+        <!-- sun {-->
+
+        <light name='sun' type='directional'>
+            <pose frame=''>0 0 1000 0.4 0.2 0</pose>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.6 0.6 0.6 1</specular>
+            <direction>0.1 0.1 -0.9</direction>
+            <attenuation>
+                <range>20</range>
+                <constant>0.5</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <cast_shadows>1</cast_shadows>
+        </light>
+        <!-- A ground plane -->
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+
+        <model name="wall">
+            <include>
+                <uri> model://wall</uri>
+                <pose>-0.090000 0.020000 0 0 0 0</pose>
+            </include>
+        </model>
+
+        <include>
+            <uri> model://warehouse</uri>
+            <pose>1.510117 -0.518801 0 0 0 3.14</pose>
+        </include>
+
+        <!--Shelfs-->
+        <!--A1-->
+        <model name="A1">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -3 -2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--A2-->
+        <model name="A2">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -2 -2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--A3-->
+        <model name="A3">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -1 -2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--A4-->
+        <model name="A4">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 1 -2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--A5-->
+        <model name="A5">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 2 -2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--A6-->
+        <model name="A6">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 3 -2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--B1-->
+        <model name="B1">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -3 -1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--B2-->
+        <model name="B2">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -2 -1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--B3-->
+        <model name="B3">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -1 -1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--B4-->
+        <model name="B4">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 1. -1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--B5-->
+        <model name="B5">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 2 -1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--B6-->
+        <model name="B6">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 3 -1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--C1-->
+        <model name="C1">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -3 1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--C2-->
+        <model name="C2">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -2 1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--C3-->
+        <model name="C3">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -1 1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--C4-->
+        <model name="C4">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 1 1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--C5-->
+        <model name="C5">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 2 1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--C6-->
+        <model name="C6">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 3 1 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--D1-->
+        <model name="D1">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -3 2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--D2-->
+        <model name="D2">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -2 2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--D3-->
+        <model name="D3">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> -1 2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--D4-->
+        <model name="D4">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 1 2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--D5-->
+        <model name="D5">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 2 2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!--D6-->
+        <model name="D6">
+            <include>
+                <uri> model://shelf</uri>
+                <pose> 3 2 0.009981 0.01 0 0 0 </pose>
+            </include>
+        </model>
+
+        <!-- =================== TAGS ===================-->
+
+        <model name="tag1">
+            <include>
+                <uri> model://tags/tag1</uri>
+                <pose> -4.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag2">
+            <include>
+                <uri> model://tags/tag2</uri>
+                <pose> -4.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag3">
+            <include>
+                <uri> model://tags/tag3</uri>
+                <pose> -4.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag4">
+            <include>
+                <uri> model://tags/tag4</uri>
+                <pose> -4.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag5">
+            <include>
+                <uri> model://tags/tag5</uri>
+                <pose> -4.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag6">
+            <include>
+                <uri> model://tags/tag6</uri>
+                <pose> -4.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag7">
+            <include>
+                <uri> model://tags/tag7</uri>
+                <pose> -4.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag8">
+            <include>
+                <uri> model://tags/tag8</uri>
+                <pose> -4.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag9">
+            <include>
+                <uri> model://tags/tag9</uri>
+                <pose> -4.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag10">
+            <include>
+                <uri> model://tags/tag10</uri>
+                <pose> -4.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag11">
+            <include>
+                <uri> model://tags/tag11</uri>
+                <pose> -4.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag12">
+            <include>
+                <uri> model://tags/tag12</uri>
+                <pose> -4.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag13">
+            <include>
+                <uri> model://tags/tag13</uri>
+                <pose> -4.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag14">
+            <include>
+                <uri> model://tags/tag14</uri>
+                <pose> -4.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag15">
+            <include>
+                <uri> model://tags/tag15</uri>
+                <pose> -4.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag16">
+            <include>
+                <uri> model://tags/tag16</uri>
+                <pose> -3.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag17">
+            <include>
+                <uri> model://tags/tag17</uri>
+                <pose> -3.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag18">
+            <include>
+                <uri> model://tags/tag18</uri>
+                <pose> -3.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag19">
+            <include>
+                <uri> model://tags/tag19</uri>
+                <pose> -3.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag20">
+            <include>
+                <uri> model://tags/tag20</uri>
+                <pose> -3.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag21">
+            <include>
+                <uri> model://tags/tag21</uri>
+                <pose> -3.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag22">
+            <include>
+                <uri> model://tags/tag22</uri>
+                <pose> -3.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag23">
+            <include>
+                <uri> model://tags/tag23</uri>
+                <pose> -3.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag24">
+            <include>
+                <uri> model://tags/tag24</uri>
+                <pose> -3.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag25">
+            <include>
+                <uri> model://tags/tag25</uri>
+                <pose> -3.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag26">
+            <include>
+                <uri> model://tags/tag26</uri>
+                <pose> -3.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag27">
+            <include>
+                <uri> model://tags/tag27</uri>
+                <pose> -3.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag28">
+            <include>
+                <uri> model://tags/tag28</uri>
+                <pose> -3.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag29">
+            <include>
+                <uri> model://tags/tag29</uri>
+                <pose> -3.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag30">
+            <include>
+                <uri> model://tags/tag30</uri>
+                <pose> -3.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag31">
+            <include>
+                <uri> model://tags/tag31</uri>
+                <pose> -3.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag32">
+            <include>
+                <uri> model://tags/tag32</uri>
+                <pose> -3.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag33">
+            <include>
+                <uri> model://tags/tag33</uri>
+                <pose> -3.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag34">
+            <include>
+                <uri> model://tags/tag34</uri>
+                <pose> -3.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag35">
+            <include>
+                <uri> model://tags/tag35</uri>
+                <pose> -3.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag36">
+            <include>
+                <uri> model://tags/tag36</uri>
+                <pose> -3.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag37">
+            <include>
+                <uri> model://tags/tag37</uri>
+                <pose> -3.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag38">
+            <include>
+                <uri> model://tags/tag38</uri>
+                <pose> -3.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag39">
+            <include>
+                <uri> model://tags/tag39</uri>
+                <pose> -3.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag40">
+            <include>
+                <uri> model://tags/tag40</uri>
+                <pose> -3.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag41">
+            <include>
+                <uri> model://tags/tag41</uri>
+                <pose> -3.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag42">
+            <include>
+                <uri> model://tags/tag42</uri>
+                <pose> -3.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag43">
+            <include>
+                <uri> model://tags/tag43</uri>
+                <pose> -3.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag44">
+            <include>
+                <uri> model://tags/tag44</uri>
+                <pose> -3.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag45">
+            <include>
+                <uri> model://tags/tag45</uri>
+                <pose> -3.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag46">
+            <include>
+                <uri> model://tags/tag46</uri>
+                <pose> -2.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag47">
+            <include>
+                <uri> model://tags/tag47</uri>
+                <pose> -2.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag48">
+            <include>
+                <uri> model://tags/tag48</uri>
+                <pose> -2.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag49">
+            <include>
+                <uri> model://tags/tag49</uri>
+                <pose> -2.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag50">
+            <include>
+                <uri> model://tags/tag50</uri>
+                <pose> -2.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag51">
+            <include>
+                <uri> model://tags/tag51</uri>
+                <pose> -2.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag52">
+            <include>
+                <uri> model://tags/tag52</uri>
+                <pose> -2.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag53">
+            <include>
+                <uri> model://tags/tag53</uri>
+                <pose> -2.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag54">
+            <include>
+                <uri> model://tags/tag54</uri>
+                <pose> -2.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag55">
+            <include>
+                <uri> model://tags/tag55</uri>
+                <pose> -2.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag56">
+            <include>
+                <uri> model://tags/tag56</uri>
+                <pose> -2.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag57">
+            <include>
+                <uri> model://tags/tag57</uri>
+                <pose> -2.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag58">
+            <include>
+                <uri> model://tags/tag58</uri>
+                <pose> -2.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag59">
+            <include>
+                <uri> model://tags/tag59</uri>
+                <pose> -2.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag60">
+            <include>
+                <uri> model://tags/tag60</uri>
+                <pose> -2.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag61">
+            <include>
+                <uri> model://tags/tag61</uri>
+                <pose> -2.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag62">
+            <include>
+                <uri> model://tags/tag62</uri>
+                <pose> -2.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag63">
+            <include>
+                <uri> model://tags/tag63</uri>
+                <pose> -2.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag64">
+            <include>
+                <uri> model://tags/tag64</uri>
+                <pose> -2.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag65">
+            <include>
+                <uri> model://tags/tag65</uri>
+                <pose> -2.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag66">
+            <include>
+                <uri> model://tags/tag66</uri>
+                <pose> -2.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag67">
+            <include>
+                <uri> model://tags/tag67</uri>
+                <pose> -2.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag68">
+            <include>
+                <uri> model://tags/tag68</uri>
+                <pose> -2.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag69">
+            <include>
+                <uri> model://tags/tag69</uri>
+                <pose> -2.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag70">
+            <include>
+                <uri> model://tags/tag70</uri>
+                <pose> -2.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag71">
+            <include>
+                <uri> model://tags/tag71</uri>
+                <pose> -2.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag72">
+            <include>
+                <uri> model://tags/tag72</uri>
+                <pose> -2.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag73">
+            <include>
+                <uri> model://tags/tag73</uri>
+                <pose> -2.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag74">
+            <include>
+                <uri> model://tags/tag74</uri>
+                <pose> -2.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag75">
+            <include>
+                <uri> model://tags/tag75</uri>
+                <pose> -2.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag76">
+            <include>
+                <uri> model://tags/tag76</uri>
+                <pose> -1.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag77">
+            <include>
+                <uri> model://tags/tag77</uri>
+                <pose> -1.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag78">
+            <include>
+                <uri> model://tags/tag78</uri>
+                <pose> -1.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag79">
+            <include>
+                <uri> model://tags/tag79</uri>
+                <pose> -1.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag80">
+            <include>
+                <uri> model://tags/tag80</uri>
+                <pose> -1.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag81">
+            <include>
+                <uri> model://tags/tag81</uri>
+                <pose> -1.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag82">
+            <include>
+                <uri> model://tags/tag82</uri>
+                <pose> -1.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag83">
+            <include>
+                <uri> model://tags/tag83</uri>
+                <pose> -1.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag84">
+            <include>
+                <uri> model://tags/tag84</uri>
+                <pose> -1.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag85">
+            <include>
+                <uri> model://tags/tag85</uri>
+                <pose> -1.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag86">
+            <include>
+                <uri> model://tags/tag86</uri>
+                <pose> -1.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag87">
+            <include>
+                <uri> model://tags/tag87</uri>
+                <pose> -1.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag88">
+            <include>
+                <uri> model://tags/tag88</uri>
+                <pose> -1.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag89">
+            <include>
+                <uri> model://tags/tag89</uri>
+                <pose> -1.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag90">
+            <include>
+                <uri> model://tags/tag90</uri>
+                <pose> -1.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag91">
+            <include>
+                <uri> model://tags/tag91</uri>
+                <pose> -1.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag92">
+            <include>
+                <uri> model://tags/tag92</uri>
+                <pose> -1.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag93">
+            <include>
+                <uri> model://tags/tag93</uri>
+                <pose> -1.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag94">
+            <include>
+                <uri> model://tags/tag94</uri>
+                <pose> -1.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag95">
+            <include>
+                <uri> model://tags/tag95</uri>
+                <pose> -1.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag96">
+            <include>
+                <uri> model://tags/tag96</uri>
+                <pose> -1.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag97">
+            <include>
+                <uri> model://tags/tag97</uri>
+                <pose> -1.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag98">
+            <include>
+                <uri> model://tags/tag98</uri>
+                <pose> -1.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag99">
+            <include>
+                <uri> model://tags/tag99</uri>
+                <pose> -1.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag100">
+            <include>
+                <uri> model://tags/tag100</uri>
+                <pose> -1.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag101">
+            <include>
+                <uri> model://tags/tag101</uri>
+                <pose> -1.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag102">
+            <include>
+                <uri> model://tags/tag102</uri>
+                <pose> -1.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag103">
+            <include>
+                <uri> model://tags/tag103</uri>
+                <pose> -1.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag104">
+            <include>
+                <uri> model://tags/tag104</uri>
+                <pose> -1.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag105">
+            <include>
+                <uri> model://tags/tag105</uri>
+                <pose> -1.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag106">
+            <include>
+                <uri> model://tags/tag106</uri>
+                <pose> -.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag107">
+            <include>
+                <uri> model://tags/tag107</uri>
+                <pose> -.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag108">
+            <include>
+                <uri> model://tags/tag108</uri>
+                <pose> -.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag109">
+            <include>
+                <uri> model://tags/tag109</uri>
+                <pose> -.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag110">
+            <include>
+                <uri> model://tags/tag110</uri>
+                <pose> -.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag111">
+            <include>
+                <uri> model://tags/tag111</uri>
+                <pose> -.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag112">
+            <include>
+                <uri> model://tags/tag112</uri>
+                <pose> -.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag113">
+            <include>
+                <uri> model://tags/tag113</uri>
+                <pose> -.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag114">
+            <include>
+                <uri> model://tags/tag114</uri>
+                <pose> -.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag115">
+            <include>
+                <uri> model://tags/tag115</uri>
+                <pose> -.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag116">
+            <include>
+                <uri> model://tags/tag116</uri>
+                <pose> -.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag117">
+            <include>
+                <uri> model://tags/tag117</uri>
+                <pose> -.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag118">
+            <include>
+                <uri> model://tags/tag118</uri>
+                <pose> -.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag119">
+            <include>
+                <uri> model://tags/tag119</uri>
+                <pose> -.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag120">
+            <include>
+                <uri> model://tags/tag120</uri>
+                <pose> -.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag121">
+            <include>
+                <uri> model://tags/tag121</uri>
+                <pose> 0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag122">
+            <include>
+                <uri> model://tags/tag122</uri>
+                <pose> 0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag123">
+            <include>
+                <uri> model://tags/tag123</uri>
+                <pose> 0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag124">
+            <include>
+                <uri> model://tags/tag124</uri>
+                <pose> 0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag125">
+            <include>
+                <uri> model://tags/tag125</uri>
+                <pose> 0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag126">
+            <include>
+                <uri> model://tags/tag126</uri>
+                <pose> 0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag127">
+            <include>
+                <uri> model://tags/tag127</uri>
+                <pose> 0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag128">
+            <include>
+                <uri> model://tags/tag128</uri>
+                <pose> 0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag129">
+            <include>
+                <uri> model://tags/tag129</uri>
+                <pose> 0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag130">
+            <include>
+                <uri> model://tags/tag130</uri>
+                <pose> 0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag131">
+            <include>
+                <uri> model://tags/tag131</uri>
+                <pose> 0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag132">
+            <include>
+                <uri> model://tags/tag132</uri>
+                <pose> 0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag133">
+            <include>
+                <uri> model://tags/tag133</uri>
+                <pose> 0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag134">
+            <include>
+                <uri> model://tags/tag134</uri>
+                <pose> 0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag135">
+            <include>
+                <uri> model://tags/tag135</uri>
+                <pose> 0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag136">
+            <include>
+                <uri> model://tags/tag136</uri>
+                <pose> .5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag137">
+            <include>
+                <uri> model://tags/tag137</uri>
+                <pose> .5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag138">
+            <include>
+                <uri> model://tags/tag138</uri>
+                <pose> .5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag139">
+            <include>
+                <uri> model://tags/tag139</uri>
+                <pose> .5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag140">
+            <include>
+                <uri> model://tags/tag140</uri>
+                <pose> .5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag141">
+            <include>
+                <uri> model://tags/tag141</uri>
+                <pose> .5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag142">
+            <include>
+                <uri> model://tags/tag142</uri>
+                <pose> .5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag143">
+            <include>
+                <uri> model://tags/tag143</uri>
+                <pose> .5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag144">
+            <include>
+                <uri> model://tags/tag144</uri>
+                <pose> .5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag145">
+            <include>
+                <uri> model://tags/tag145</uri>
+                <pose> .5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag146">
+            <include>
+                <uri> model://tags/tag146</uri>
+                <pose> .5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag147">
+            <include>
+                <uri> model://tags/tag147</uri>
+                <pose> .5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag148">
+            <include>
+                <uri> model://tags/tag148</uri>
+                <pose> .5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag149">
+            <include>
+                <uri> model://tags/tag149</uri>
+                <pose> .5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag150">
+            <include>
+                <uri> model://tags/tag150</uri>
+                <pose> .5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag151">
+            <include>
+                <uri> model://tags/tag151</uri>
+                <pose> 1.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag152">
+            <include>
+                <uri> model://tags/tag152</uri>
+                <pose> 1.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag153">
+            <include>
+                <uri> model://tags/tag153</uri>
+                <pose> 1.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag154">
+            <include>
+                <uri> model://tags/tag154</uri>
+                <pose> 1.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag155">
+            <include>
+                <uri> model://tags/tag155</uri>
+                <pose> 1.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag156">
+            <include>
+                <uri> model://tags/tag156</uri>
+                <pose> 1.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag157">
+            <include>
+                <uri> model://tags/tag157</uri>
+                <pose> 1.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag158">
+            <include>
+                <uri> model://tags/tag158</uri>
+                <pose> 1.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag159">
+            <include>
+                <uri> model://tags/tag159</uri>
+                <pose> 1.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag160">
+            <include>
+                <uri> model://tags/tag160</uri>
+                <pose> 1.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag161">
+            <include>
+                <uri> model://tags/tag161</uri>
+                <pose> 1.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag162">
+            <include>
+                <uri> model://tags/tag162</uri>
+                <pose> 1.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag163">
+            <include>
+                <uri> model://tags/tag163</uri>
+                <pose> 1.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag164">
+            <include>
+                <uri> model://tags/tag164</uri>
+                <pose> 1.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag165">
+            <include>
+                <uri> model://tags/tag165</uri>
+                <pose> 1.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag166">
+            <include>
+                <uri> model://tags/tag166</uri>
+                <pose> 1.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag167">
+            <include>
+                <uri> model://tags/tag167</uri>
+                <pose> 1.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag168">
+            <include>
+                <uri> model://tags/tag168</uri>
+                <pose> 1.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag169">
+            <include>
+                <uri> model://tags/tag169</uri>
+                <pose> 1.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag170">
+            <include>
+                <uri> model://tags/tag170</uri>
+                <pose> 1.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag171">
+            <include>
+                <uri> model://tags/tag171</uri>
+                <pose> 1.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag172">
+            <include>
+                <uri> model://tags/tag172</uri>
+                <pose> 1.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag173">
+            <include>
+                <uri> model://tags/tag173</uri>
+                <pose> 1.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag174">
+            <include>
+                <uri> model://tags/tag174</uri>
+                <pose> 1.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag175">
+            <include>
+                <uri> model://tags/tag175</uri>
+                <pose> 1.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag176">
+            <include>
+                <uri> model://tags/tag176</uri>
+                <pose> 1.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag177">
+            <include>
+                <uri> model://tags/tag177</uri>
+                <pose> 1.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag178">
+            <include>
+                <uri> model://tags/tag178</uri>
+                <pose> 1.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag179">
+            <include>
+                <uri> model://tags/tag179</uri>
+                <pose> 1.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag180">
+            <include>
+                <uri> model://tags/tag180</uri>
+                <pose> 1.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag181">
+            <include>
+                <uri> model://tags/tag181</uri>
+                <pose> 2.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag182">
+            <include>
+                <uri> model://tags/tag182</uri>
+                <pose> 2.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag183">
+            <include>
+                <uri> model://tags/tag183</uri>
+                <pose> 2.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag184">
+            <include>
+                <uri> model://tags/tag184</uri>
+                <pose> 2.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag185">
+            <include>
+                <uri> model://tags/tag185</uri>
+                <pose> 2.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag186">
+            <include>
+                <uri> model://tags/tag186</uri>
+                <pose> 2.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag187">
+            <include>
+                <uri> model://tags/tag187</uri>
+                <pose> 2.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag188">
+            <include>
+                <uri> model://tags/tag188</uri>
+                <pose> 2.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag189">
+            <include>
+                <uri> model://tags/tag189</uri>
+                <pose> 2.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag190">
+            <include>
+                <uri> model://tags/tag190</uri>
+                <pose> 2.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag191">
+            <include>
+                <uri> model://tags/tag191</uri>
+                <pose> 2.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag192">
+            <include>
+                <uri> model://tags/tag192</uri>
+                <pose> 2.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag193">
+            <include>
+                <uri> model://tags/tag193</uri>
+                <pose> 2.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag194">
+            <include>
+                <uri> model://tags/tag194</uri>
+                <pose> 2.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag195">
+            <include>
+                <uri> model://tags/tag195</uri>
+                <pose> 2.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag196">
+            <include>
+                <uri> model://tags/tag196</uri>
+                <pose> 2.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag197">
+            <include>
+                <uri> model://tags/tag197</uri>
+                <pose> 2.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag198">
+            <include>
+                <uri> model://tags/tag198</uri>
+                <pose> 2.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag199">
+            <include>
+                <uri> model://tags/tag199</uri>
+                <pose> 2.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag200">
+            <include>
+                <uri> model://tags/tag200</uri>
+                <pose> 2.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag201">
+            <include>
+                <uri> model://tags/tag201</uri>
+                <pose> 2.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag202">
+            <include>
+                <uri> model://tags/tag202</uri>
+                <pose> 2.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag203">
+            <include>
+                <uri> model://tags/tag203</uri>
+                <pose> 2.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag204">
+            <include>
+                <uri> model://tags/tag204</uri>
+                <pose> 2.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag205">
+            <include>
+                <uri> model://tags/tag205</uri>
+                <pose> 2.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag206">
+            <include>
+                <uri> model://tags/tag206</uri>
+                <pose> 2.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag207">
+            <include>
+                <uri> model://tags/tag207</uri>
+                <pose> 2.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag208">
+            <include>
+                <uri> model://tags/tag208</uri>
+                <pose> 2.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag209">
+            <include>
+                <uri> model://tags/tag209</uri>
+                <pose> 2.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag210">
+            <include>
+                <uri> model://tags/tag210</uri>
+                <pose> 2.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag211">
+            <include>
+                <uri> model://tags/tag211</uri>
+                <pose> 3.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag212">
+            <include>
+                <uri> model://tags/tag212</uri>
+                <pose> 3.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag213">
+            <include>
+                <uri> model://tags/tag213</uri>
+                <pose> 3.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag214">
+            <include>
+                <uri> model://tags/tag214</uri>
+                <pose> 3.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag215">
+            <include>
+                <uri> model://tags/tag215</uri>
+                <pose> 3.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag216">
+            <include>
+                <uri> model://tags/tag216</uri>
+                <pose> 3.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag217">
+            <include>
+                <uri> model://tags/tag217</uri>
+                <pose> 3.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag218">
+            <include>
+                <uri> model://tags/tag218</uri>
+                <pose> 3.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag219">
+            <include>
+                <uri> model://tags/tag219</uri>
+                <pose> 3.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag220">
+            <include>
+                <uri> model://tags/tag220</uri>
+                <pose> 3.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag221">
+            <include>
+                <uri> model://tags/tag221</uri>
+                <pose> 3.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag222">
+            <include>
+                <uri> model://tags/tag222</uri>
+                <pose> 3.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag223">
+            <include>
+                <uri> model://tags/tag223</uri>
+                <pose> 3.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag224">
+            <include>
+                <uri> model://tags/tag224</uri>
+                <pose> 3.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag225">
+            <include>
+                <uri> model://tags/tag225</uri>
+                <pose> 3.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag226">
+            <include>
+                <uri> model://tags/tag226</uri>
+                <pose> 3.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag227">
+            <include>
+                <uri> model://tags/tag227</uri>
+                <pose> 3.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag228">
+            <include>
+                <uri> model://tags/tag228</uri>
+                <pose> 3.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag229">
+            <include>
+                <uri> model://tags/tag229</uri>
+                <pose> 3.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag230">
+            <include>
+                <uri> model://tags/tag230</uri>
+                <pose> 3.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag231">
+            <include>
+                <uri> model://tags/tag231</uri>
+                <pose> 3.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag232">
+            <include>
+                <uri> model://tags/tag232</uri>
+                <pose> 3.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag233">
+            <include>
+                <uri> model://tags/tag233</uri>
+                <pose> 3.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag234">
+            <include>
+                <uri> model://tags/tag234</uri>
+                <pose> 3.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag235">
+            <include>
+                <uri> model://tags/tag235</uri>
+                <pose> 3.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag236">
+            <include>
+                <uri> model://tags/tag236</uri>
+                <pose> 3.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag237">
+            <include>
+                <uri> model://tags/tag237</uri>
+                <pose> 3.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag238">
+            <include>
+                <uri> model://tags/tag238</uri>
+                <pose> 3.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag239">
+            <include>
+                <uri> model://tags/tag239</uri>
+                <pose> 3.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag240">
+            <include>
+                <uri> model://tags/tag240</uri>
+                <pose> 3.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag241">
+            <include>
+                <uri> model://tags/tag241</uri>
+                <pose> 4.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag242">
+            <include>
+                <uri> model://tags/tag242</uri>
+                <pose> 4.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag243">
+            <include>
+                <uri> model://tags/tag243</uri>
+                <pose> 4.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag244">
+            <include>
+                <uri> model://tags/tag244</uri>
+                <pose> 4.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag245">
+            <include>
+                <uri> model://tags/tag245</uri>
+                <pose> 4.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag246">
+            <include>
+                <uri> model://tags/tag246</uri>
+                <pose> 4.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag247">
+            <include>
+                <uri> model://tags/tag247</uri>
+                <pose> 4.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag248">
+            <include>
+                <uri> model://tags/tag248</uri>
+                <pose> 4.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag249">
+            <include>
+                <uri> model://tags/tag249</uri>
+                <pose> 4.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag250">
+            <include>
+                <uri> model://tags/tag250</uri>
+                <pose> 4.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag251">
+            <include>
+                <uri> model://tags/tag251</uri>
+                <pose> 4.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag252">
+            <include>
+                <uri> model://tags/tag252</uri>
+                <pose> 4.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag253">
+            <include>
+                <uri> model://tags/tag253</uri>
+                <pose> 4.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag254">
+            <include>
+                <uri> model://tags/tag254</uri>
+                <pose> 4.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag255">
+            <include>
+                <uri> model://tags/tag255</uri>
+                <pose> 4.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag256">
+            <include>
+                <uri> model://tags/tag256</uri>
+                <pose> 4.5 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag257">
+            <include>
+                <uri> model://tags/tag257</uri>
+                <pose> 4.5 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag258">
+            <include>
+                <uri> model://tags/tag258</uri>
+                <pose> 4.5 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag259">
+            <include>
+                <uri> model://tags/tag259</uri>
+                <pose> 4.5 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag260">
+            <include>
+                <uri> model://tags/tag260</uri>
+                <pose> 4.5 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag261">
+            <include>
+                <uri> model://tags/tag261</uri>
+                <pose> 4.5 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag262">
+            <include>
+                <uri> model://tags/tag262</uri>
+                <pose> 4.5 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag263">
+            <include>
+                <uri> model://tags/tag263</uri>
+                <pose> 4.5 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag264">
+            <include>
+                <uri> model://tags/tag264</uri>
+                <pose> 4.5 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag265">
+            <include>
+                <uri> model://tags/tag265</uri>
+                <pose> 4.5 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag266">
+            <include>
+                <uri> model://tags/tag266</uri>
+                <pose> 4.5 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag267">
+            <include>
+                <uri> model://tags/tag267</uri>
+                <pose> 4.5 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag268">
+            <include>
+                <uri> model://tags/tag268</uri>
+                <pose> 4.5 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag269">
+            <include>
+                <uri> model://tags/tag269</uri>
+                <pose> 4.5 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag270">
+            <include>
+                <uri> model://tags/tag270</uri>
+                <pose> 4.5 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag271">
+            <include>
+                <uri> model://tags/tag271</uri>
+                <pose> 5.0 -4.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag272">
+            <include>
+                <uri> model://tags/tag272</uri>
+                <pose> 5.0 -3.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag273">
+            <include>
+                <uri> model://tags/tag273</uri>
+                <pose> 5.0 -3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag274">
+            <include>
+                <uri> model://tags/tag274</uri>
+                <pose> 5.0 -2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag275">
+            <include>
+                <uri> model://tags/tag275</uri>
+                <pose> 5.0 -2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag276">
+            <include>
+                <uri> model://tags/tag276</uri>
+                <pose> 5.0 -1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag277">
+            <include>
+                <uri> model://tags/tag277</uri>
+                <pose> 5.0 -1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag278">
+            <include>
+                <uri> model://tags/tag278</uri>
+                <pose> 5.0 -.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag279">
+            <include>
+                <uri> model://tags/tag279</uri>
+                <pose> 5.0 0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag280">
+            <include>
+                <uri> model://tags/tag280</uri>
+                <pose> 5.0 .5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag281">
+            <include>
+                <uri> model://tags/tag281</uri>
+                <pose> 5.0 1.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag282">
+            <include>
+                <uri> model://tags/tag282</uri>
+                <pose> 5.0 1.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag283">
+            <include>
+                <uri> model://tags/tag283</uri>
+                <pose> 5.0 2.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag284">
+            <include>
+                <uri> model://tags/tag284</uri>
+                <pose> 5.0 2.5 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+        <model name="tag285">
+            <include>
+                <uri> model://tags/tag285</uri>
+                <pose> 5.0 3.0 0.011 0 0 0 </pose>
+            </include>
+        </model>
+
+
+    </world>
+</sdf>

@@ -8,6 +8,7 @@
     <arg name="gui" default="true" />
     <arg name="pause" default="false" />
     <arg name="world" default="$(find robot_description)/world/warehouse.world" />
+    <!-- <arg name="world" default="$(find robot_description)/world/warehouse_with_apriltag.world" /> -->
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="use_sim_time" value="true" />

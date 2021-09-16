@@ -45,7 +45,7 @@
     <joint name="joint_camera_1" type="fixed">
         <parent link="carcaca" />
         <child link="camera_1" />
-        <origin rpy="0 1.57 0" xyz="0 -0.127 0.0367" />
+        <origin rpy="0 1.57 0" xyz="0 0 0.0367" />
     </joint>
 
     <link name="camera_1">
