@@ -13,11 +13,22 @@ sudo apt-get install ros-fuerte-visualization
 
 sudo apt-get install -y joint-state-publisher
 
+echo "Creating a Workspace"
+mkdir -p ~/catkin_warehouse/src
+cd ~/catkin_warehouse
+catkin_make
+
+cd src
+
 git clone https://github.com/LASER-Robotics/Warehouse_Gazebo.git
 
-cd src/robot_control/scripts/
+cd Warehouse_Gazebo/robot_control/scripts/
 chmod +x laser_teleop_keyboard
 
-echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
+echo 'source ~/catkin_warehouse/devel/setup.bash' >>~/.bashrc
 
-echo 'source ~/catkin_ws/src/robot_description/session/shell_additions.sh' >> ~/.bashrc
+echo 'source ~/catkin_warehouse/src/Warehouse_Gazebo/robot_description/session/shell_additions.sh' >>~/.bashrc
+
+cd ~/catkin_warehouse
+
+catkin_make
