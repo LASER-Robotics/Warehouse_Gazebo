@@ -24,6 +24,8 @@ git clone https://github.com/LASER-Robotics/Warehouse_Gazebo.git
 
 cd Warehouse_Gazebo/robot_control/scripts/
 chmod +x laser_teleop_keyboard
+cd ~/catkin_warehouse/src/Warehouse_Gazebo/robot_description/session/
+chmod +x open_robot.sh
 
 echo 'source ~/catkin_warehouse/devel/setup.bash' >>~/.bashrc
 
