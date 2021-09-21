@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+    <model name="columns">
+        <static>true</static>
+                
+        <link name="column_1_hori">
+            <pose>4.5 0.055 0.5 0 0 1.5707</pose>
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.11 0.45 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.11 0.45 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="column_2_verti">
+            <pose>8.95 4.82 0.5 0 0 0</pose> <!-- corrigir posicao y -->
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.1 0.36 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.1 0.36 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="column_3_hori">
+            <pose>8.9425 22.25 0.5 0 0 1.5707</pose>
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.07 0.445 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.07 0.445 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+        
+        <link name="column_4_hori">
+            <pose>4.5225 22.235 0.5 0 0 1.5707</pose>
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.1 0.435 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.1 0.435 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="column_8_verti">
+            <pose>0.15 5.3645 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.3 0.205 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.3 0.205 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="column_7_verti">
+            <pose>0.15 9.764 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.3 0.21 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.3 0.21 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="column_6_verti">
+            <pose>0.175 14.202 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.35 0.26 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.35 0.26 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="column_5_verti">
+            <pose>0.1525 18.6245 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.305 0.205 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.305 0.205 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="obj8">
+            <pose>8.936 18.72 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.45 0.19 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.45 0.19 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="obj9">
+            <pose>8.936 14.275 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.45 0.19 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.45 0.19 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <link name="obj10">
+            <pose>8.9695 9.8545 0.5 0 0 0</pose> 
+            <static>true</static>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <!-- inertias are tricky to compute -->
+                    <ixx>1</ixx> <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+                    <ixy>0</ixy> <!-- for a box: ixy = 0 -->
+                    <ixz>0</ixz> <!-- for a box: ixz = 0 -->
+                    <iyy>1</iyy> <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+                    <iyz>0</iyz> <!-- for a box: iyz = 0 -->
+                    <izz>1</izz> <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.445 0.545 5</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.445 0.545 5</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/White</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

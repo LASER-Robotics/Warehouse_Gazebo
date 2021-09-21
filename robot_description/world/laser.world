@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<sdf version="1.5">
+        <world name="default">
+                <!-- physics engine {-->
+                <physics name="default_physics" default="0" type="ode">
+                        <gravity>0 0 -9.8066</gravity>
+                        <ode>
+                                <solver>
+                                        <type>quick</type>
+                                        <iters>10</iters>
+                                        <sor>1.3</sor>
+                                        <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+                                </solver>
+                                <constraints>
+                                        <cfm>0</cfm>
+                                        <erp>0.2</erp>
+                                        <contact_max_correcting_vel>1000</contact_max_correcting_vel>
+                                        <contact_surface_layer>0.001</contact_surface_layer>
+                                </constraints>
+                        </ode>
+                        <max_step_size>0.004</max_step_size>
+                        <real_time_factor>1</real_time_factor>
+                        <real_time_update_rate>250</real_time_update_rate>
+                        <magnetic_field>6.0e-06 2.3e-05 -4.2e-05</magnetic_field>
+                </physics>
+                <!--}-->
+
+                <GUI name="default_gri" default="0" type="ode">
+                        <grid> 45 1.0 0 0.0150</grid>
+                </GUI>
+
+                <!-- setup shadows {-->
+                <scene>
+                        <shadows>true</shadows>
+                        <sky>
+                                <clouds />
+                        </sky>
+                </scene>
+                <!--}-->
+
+                <!-- sun {-->
+
+                <light name='sun' type='directional'>
+                        <pose frame=''>0 0 10000 0.4 0.2 0</pose>
+                        <diffuse>1 1 1 1</diffuse>
+                        <specular>0.6 0.6 0.6 1</specular>
+                        <direction>0.1 0.1 -0.9</direction>
+                        <attenuation>
+                                <range>20</range>
+                                <constant>0.5</constant>
+                                <linear>0.01</linear>
+                                <quadratic>0.001</quadratic>
+                        </attenuation>
+                        <cast_shadows>1</cast_shadows>
+                </light>
+                <!-- A ground plane e robo-->
+                <include>
+                        <uri>model://ground_plane</uri>
+                </include>
+
+                <!-- todas as paredes -->
+                <model name="wall">
+                        <include>
+                                <uri> model://wall-laser</uri>
+                        </include>
+                </model>
+
+                <!-- Todas as colunas -->
+                <model name="columns">
+                        <include>
+                                <uri> model://columns-laser</uri>
+                        </include>
+                </model>
+
+                <!-- Todas as bancadas -->
+                <model name="labBenchs">
+                        <include>
+                                <uri> model://labBench-laser</uri>
+                        </include>
+                </model>
+
+                <!-- porta -->
+                <!-- <model name="door">
+                        <include>
+                                <uri> model://hinged_door</uri>
+                        </include>
+                </model> -->
+
+                <!-- QR code -->
+                <!-- <include>
+                        <uri> model://tag</uri>
+                        <pose> 0 -0.127 0.011 0 0 0 </pose>
+                </include> -->
+
+                <!-- <include>
+                        <uri> model://warehouse</uri>
+                        <pose>1.600644 -0.565783 0 0 0 0 </pose>
+                </include> -->
+
+                <!--Armarios-->
+                <model name="obj1">
+                        <include>
+                                <uri> model://bookshelf</uri>
+                                <pose> 0 5.927 0 0 0 1.5707 </pose>
+                        </include>
+                </model>
+
+                <model name="obj2">
+                        <include>
+                                <uri> model://cupboards</uri>
+                                
+                        </include>
+                </model>
+
+        </world>
+</sdf>
