@@ -13,10 +13,12 @@
 
         <gazebo reference="${prefix}">
             <selfCollide>false</selfCollide>
-            <mu1 value="100" />
-            <mu2 value="50" />
-            <kp value="10000000.0" />
-            <kd value="1000" />
+            <mu1>1.0</mu1>
+            <mu2>1.0</mu2>
+            <kp>1000000.0</kp>
+            <kd>100.0</kd>
+            <minDepth>0.001</minDepth>
+            <maxVel>1.0</maxVel>
             <fdir1 value="0 0 0" />
         </gazebo>
 
@@ -24,7 +26,9 @@
             <inertial>
                 <mass value="1" />
                 <origin rpy="0 0 0" xyz="0 0 0" />
-                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
             </inertial>
             <collision name="${prefix}_collision">
                 <origin rpy="0 0 0" xyz="0 0 0" />
