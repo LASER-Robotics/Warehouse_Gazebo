@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-
-    <arg name="x" default="0" />
-    <arg name="y" default="0" />
+    <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="x" default="4.52" />   <!--4.52-->
+    <arg name="y" default="2.37" />   <!--2.37-->
     <arg name="z" default="0.02" />
+    <arg name="yaw" default="0.0"/>
     <arg name="debug" default="false" />
     <arg name="gui" default="true" />
     <arg name="pause" default="false" />
-    <arg name="world" default="$(find robot_description)/world/warehouse.world" />
-    <!-- <arg name="world" default="$(find robot_description)/world/warehouse_with_apriltag.world" /> -->
+    <arg name="world" default="laser" />
+    <!-- para trocar de mapa, trocar valor default de world para o nome do arquivo que estiver
+    na pasta world. 
+    Outra opcao eh dar o valor na chamada do roslaunch. Exemplo: 
+                                        roslaunch robot_description spawn.launch world:=warehouse-->
+    
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="use_sim_time" value="true" />
         <arg name="debug" value="false" />
         <arg name="gui" value="$(arg gui)" />
-        <arg name="world_name" value="$(arg world)" />
+        <arg name="world_name" value="$(find robot_description)/world/$(arg world).world" />
     </include>
 
     <!--=========================== SENSORS ===========================-->
     <!-- Set true to sensor spawn in gazebo-->
-    <arg name="set_sensor_rplidar" default="false" />
-    <arg name="set_sensor_lidar" default="true" />
+    <arg name="set_sensor_rplidar" default="true" />
+    <arg name="set_sensor_lidar" default="false" />
     <arg name="set_sensor_imu" default="true" />
     <arg name="set_sensor_camera" default="true" />
 
@@ -30,7 +35,10 @@
     sensor_lidar:=$(arg set_sensor_lidar)
     sensor_imu:=$(arg set_sensor_imu)
     sensor_camera:=$(arg set_sensor_camera)" />
-
-
-    <node name="my_robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model my_robot -x $(arg x) -y $(arg y) -z $(arg z)"></node>
+    
+    
+    
+    <node name="my_robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf 
+    -param robot_description -model my_robot -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw)"></node>
+    
 </launch>
