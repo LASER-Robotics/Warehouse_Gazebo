@@ -9,11 +9,6 @@
     <arg name="gui" default="true" />
     <arg name="pause" default="false" />
     <arg name="world" default="laser" />
-    <!-- para trocar de mapa, trocar valor default de world para o nome do arquivo que estiver
-    na pasta world. 
-    Outra opcao eh dar o valor na chamada do roslaunch. Exemplo: 
-                                        roslaunch robot_description spawn.launch world:=warehouse-->
-    
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="use_sim_time" value="true" />
