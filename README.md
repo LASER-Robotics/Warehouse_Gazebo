@@ -25,6 +25,7 @@ Click on the image below to watch a demonstration of the simulation: <br >
 
 
 
+
 Contents
 =================
 <!--ts-->
@@ -91,3 +92,21 @@ To use sensors like <code>camera</code> and <code>optical sensor</code> we creat
 source ./devel/setup.bash <br />
 roslaunch robot_description rviz.launch
 </pre>
+
+### How to change the map
+The default map for the simulation is the LASER laboratory
+
+![WhatsApp Image 2022-02-14 at 10 18 31](https://user-images.githubusercontent.com/36930457/153872784-185143e5-d472-4994-83e1-59e5127a929b.jpeg)
+
+It's possible to change it through the command line. In the example let's change it to the warehouse map:
+
+<pre>
+roslaunch robot_description spawn.launch world:=warehouse
+</pre>
+
+It works with any <code>.world</code> map
+
+### How to change the laser sensor
+The default laser sensor is the rplidar sensor, but is possible to change it to the regular lidar sensor through the <code>spawn.launch</code> file
+
+![WhatsApp Image 2022-02-14 at 10 48 46](https://user-images.githubusercontent.com/36930457/153876788-9a5ac258-161e-49ef-8e49-0aeac0adfaa4.jpeg)
