@@ -5,7 +5,7 @@
 
         <!-- obj12.1 -->
         <link name="white_hori_1">
-            <pose>4.423 19.633 1 0 0 0</pose>
+            <pose>4.423 19.633 0.8 0 0 0</pose>
             <static>true</static>
             <inertial>
                 <mass>1.0</mass>
@@ -22,14 +22,14 @@
             <collision name="collision">
                 <geometry>
                     <box>
-                        <size>5 0.3 0.85</size>
+                        <size>5 0.3 1.3</size>
                     </box>
                 </geometry>
             </collision>
             <visual name="visual">
                 <geometry>
                     <box>
-                        <size>5 0.3 0.85</size>
+                        <size>5 0.3 1.3</size>
                     </box>
                 </geometry>
                 <material>
@@ -191,7 +191,7 @@
 
         <!-- obj12.2 -->
         <link name="white_hori_2">
-            <pose>4.423 15.603 1 0 0 0</pose>
+            <pose>4.423 15.603 0.8 0 0 0</pose>
             <static>true</static>
             <inertial>
                 <mass>1.0</mass>
@@ -208,14 +208,14 @@
             <collision name="collision">
                 <geometry>
                     <box>
-                        <size>5 0.3 0.85</size>
+                        <size>5 0.3 1.3</size>
                     </box>
                 </geometry>
             </collision>
             <visual name="visual">
                 <geometry>
                     <box>
-                        <size>5 0.3 0.85</size>
+                        <size>5 0.3 1.3</size>
                     </box>
                 </geometry>
                 <material>
@@ -377,7 +377,7 @@
 
         <!-- obj12.3 -->
         <link name="white_hori_3">
-            <pose>4.423 11.573 1 0 0 0</pose>
+            <pose>4.423 11.573 0.8 0 0 0</pose>
             <static>true</static>
             <inertial>
                 <mass>1.0</mass>
@@ -394,14 +394,14 @@
             <collision name="collision">
                 <geometry>
                     <box>
-                        <size>5 0.3 0.85</size>
+                        <size>5 0.3 1.3</size>
                     </box>
                 </geometry>
             </collision>
             <visual name="visual">
                 <geometry>
                     <box>
-                        <size>5 0.3 0.85</size>
+                        <size>5 0.3 1.3</size>
                     </box>
                 </geometry>
                 <material>
